@@ -51,7 +51,7 @@
 
         opacity: 0;
         color: white;
-        transition: var(--transition);
+        transition: var(--transition-slow);
     }
 
     .innerCover > * {
@@ -76,7 +76,7 @@
         padding: 1em;
         background-color: rgb(26, 97, 121);
         color: white;
-        transition: var(--transition);
+        transition: var(--transition-slow);
     }
 
     .innerCover a:hover, .innerCover a:active {
