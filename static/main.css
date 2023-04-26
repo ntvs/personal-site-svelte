@@ -1,3 +1,9 @@
+/*Global Variables*/
+:root {
+    --transition: 0.2s;
+}
+  
+
 /*Reset styles*/
 * {
     margin: 0;
@@ -8,18 +14,18 @@
 
 html {
     min-height: 100%;
-    min-width: 300px;
+    /* min-width: 300px; */
 }
 
 /*Containers*/
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 1em;
     width: 100%;
 }
 
 .container {
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1200px;
 }
