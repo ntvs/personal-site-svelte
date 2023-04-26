@@ -33,6 +33,7 @@
 <style>
     .project {
         background-size: cover;
+        background-position: center;
         height: max(30vh, 250px);
 
         text-decoration: none;
