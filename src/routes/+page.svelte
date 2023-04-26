@@ -25,7 +25,7 @@
         {/each}
 
     {:else}
-        <h2>Projects unavailable...</h2>
+        <h2>Projects unavailable.</h2>
         
     {/if}
 </div>
@@ -54,7 +54,7 @@
         transition: var(--transition-slow);
     }
 
-    .innerCover > * {
+    .innerCover h1 {
         margin: 0.5em 0;
     }
 
