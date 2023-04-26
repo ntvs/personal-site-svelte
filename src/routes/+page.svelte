@@ -15,9 +15,12 @@
     
         {#each projects as project}
             
-            <div class="project">
-                <h2>{project.name}</h2>
-            </div>
+            <a href="/" class="project" style="background-image: url({project.cover});">
+                <div class="innerCover">
+                    <h1>{project.name}</h1>
+                    <a href="/">Read More</a>
+                </div>
+            </a>
 
         {/each}
 
@@ -29,7 +32,57 @@
 
 <style>
     .project {
+        background-size: cover;
+        height: max(30vh, 250px);
+
+        text-decoration: none;
+    }
+
+    .innerCover {
         padding: 1em;
-        margin: 1em 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: end;
+
+        opacity: 0;
+        color: white;
+        transition: var(--transition);
+    }
+
+    .innerCover > * {
+        margin: 0.5em 0;
+    }
+
+    .project:hover .innerCover, .project:active .innerCover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .innerCover h1 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    .innerCover a {
+        border: none;
+        text-decoration: none;
+        padding: 1em;
+        background-color: rgb(26, 97, 121);
+        color: white;
+        transition: var(--transition);
+    }
+
+    .innerCover a:hover, .innerCover a:active {
+        background-color: rgb(37, 125, 155);
+    }
+
+    .innerCover a::after {
+        content: " ➥";
     }
 </style>
