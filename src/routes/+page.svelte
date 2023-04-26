@@ -6,6 +6,10 @@
     //console.log(projects);
 </script>
 
+<svelte:head>
+    <title>Portfolio | Nick Ribeiro</title>
+</svelte:head>
+
 <div class="gridContainer">
     {#if projects}
     
