@@ -86,4 +86,11 @@
     .innerCover a::after {
         content: " ➥";
     }
+
+    @media (hover: none) {
+        .innerCover {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
 </style>
