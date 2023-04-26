@@ -22,5 +22,6 @@
     nav a {
         padding: 1em;
         color: gray;
+        text-decoration-style: dotted;
     }
 </style>
