@@ -1,2 +1,31 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    //Data fetched by load function
+    export let data;
+    let projects = data.projects;
+
+    //console.log(projects);
+</script>
+
+<div class="gridContainer">
+    {#if projects}
+    
+        {#each projects as project}
+            
+            <div class="project">
+                <h2>{project.name}</h2>
+            </div>
+
+        {/each}
+
+    {:else}
+        <h2>Projects unavailable...</h2>
+        
+    {/if}
+</div>
+
+<style>
+    .project {
+        padding: 1em;
+        margin: 1em 0;
+    }
+</style>
