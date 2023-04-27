@@ -40,13 +40,16 @@
 <style>
 
     .gallery {
-        padding: 1rem 0;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
     .gallery > * {
         width: 100%;
         padding: 0;
+    }
+
+    h1, h3, p, .tags {
+        padding-bottom: 1rem;
     }
 
     .heading {
@@ -59,20 +62,19 @@
     }
 
     h3 {
-        padding: 1rem 0;
+        padding-bottom: 1rem;
         color: gray;
     }
 
     p {
         color: gray;
         line-height: 2em;
-        padding: 1rem 0;
     }
 
     img {
         width: 50%;
         float: right;
-        padding: 1rem;
+        padding: 1rem 0 0 1rem;
     }
 
     .clearFloat::after {
@@ -81,7 +83,7 @@
         content: "";
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 740px) {
         img {
             float: none;
             width: 100%;
