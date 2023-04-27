@@ -1,4 +1,7 @@
 <script>
+
+    import { fade } from "svelte/transition";
+
     //fetched data
     export let data;
     const project = data.project;
@@ -6,7 +9,18 @@
     //components
     import Tag from "../../../lib/Tag.svelte";
 
-    console.log(project);
+    //state
+    let modalOpen = false;
+    let selectedProject = {"image":"", "alt":""};
+    
+    //mutators
+    let toggleModal = () => {modalOpen = !modalOpen};
+    let updateModal = (image, alt) => {
+        selectedProject = {image, alt}
+    };
+
+    //debug
+    //console.log(project);
 </script>
 
 <section class="heading">
@@ -20,25 +34,58 @@
     </div>
 </section>
 
+<!--Main -->
 <section class="content clearFloat">
-    <img src="{project.cover}" alt="{project['cover-alt']}">
+    <img src="{project.cover}" alt="{project['cover-alt']}" on:click={() => {toggleModal(); updateModal(project.cover, "");}} on:keypress={() => {toggleModal(); updateModal(project.cover, "");}}>
     <p>{project.description}</p>
 </section>
 
-<h1>Gallery</h1>
-<section class="gallery gridContainer">
-    {#each project.gallery as pic}
-        <img src="{pic.link}" alt="{pic.alt}">
-    {/each}
-</section>
+<!--Display gallery images if there are any-->
+{#if project.gallery.length > 0}
+    <h1>Gallery</h1>
+    <section class="gallery gridContainer">
+        {#each project.gallery as pic}
+            <img src="{pic.link}" alt="{pic.alt}" on:click={() => {toggleModal(); updateModal(pic.link, "");}} on:keypress={() => {toggleModal(); updateModal(pic.link, "");}}>
+        {/each}
+    </section>    
+{/if}
 
-
-<!-- <h1>{project.name}</h1>
-<p>{project.description}</p> -->
+<!--Open modal to view images on click-->
+{#if modalOpen}
+    <div class="modal" transition:fade on:click={() => {modalOpen = false}} on:keypress={() => {modalOpen = false}}>
+        <div class="container">
+            <img src="{selectedProject.image}" alt="{selectedProject.alt}">
+        </div>
+    </div>
+{/if}
 
 
 <style>
 
+    /* modal styles */
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 11;
+
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        background-color: rgba(0, 0, 0, 0.8);
+        height: 100%;
+        width: 100%;
+
+        transition: 0.5s;
+    }
+
+    .modal img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+
+    /* image gallery styles */
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
@@ -46,8 +93,10 @@
     .gallery > * {
         width: 100%;
         padding: 0;
+        cursor: pointer;
     }
 
+    /* text & section styles */
     h1, h3, p, .tags {
         padding-bottom: 1rem;
     }
@@ -71,20 +120,16 @@
         line-height: 2em;
     }
 
-    img {
+    /* hero content image styles */
+    .content img {
         width: 50%;
         float: right;
-        padding: 1rem 0 0 1rem;
-    }
-
-    .clearFloat::after {
-        clear: both;
-        display: block;
-        content: "";
+        padding-left: 1rem;
+        cursor: pointer;
     }
 
     @media screen and (max-width: 740px) {
-        img {
+        .content img {
             float: none;
             width: 100%;
             padding: 1rem 0;
