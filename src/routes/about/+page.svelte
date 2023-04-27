@@ -61,7 +61,7 @@
         text-align: center;
     }
 
-    @media screen and (max-width: 615px) {
+    @media screen and (max-width: 648px) {
         p, img {
             justify-self: center;
         }

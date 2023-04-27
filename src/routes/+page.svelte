@@ -31,9 +31,9 @@
 </div>
 
 <style>
-    .gridContainer:last-child {
+    /* .gridContainer:last-child {
         margin-bottom: 1em;
-    }
+    } */
 
     .project {
         background-size: cover;
