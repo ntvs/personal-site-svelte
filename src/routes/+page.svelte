@@ -15,10 +15,10 @@
     
         {#each projects as project}
             
-            <a href="/" class="project" style="background-image: url({project.cover});">
+            <a href="/project/{project.route}" class="project" style="background-image: url({project.cover});">
                 <div class="innerCover">
                     <h1>{project.name}</h1>
-                    <a href="/">Read More</a>
+                    <a href="/project/{project.route}">Read More</a>
                 </div>
             </a>
 
