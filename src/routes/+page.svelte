@@ -31,6 +31,10 @@
 </div>
 
 <style>
+    .gridContainer:last-child {
+        margin-bottom: 1em;
+    }
+
     .project {
         background-size: cover;
         background-position: center;
