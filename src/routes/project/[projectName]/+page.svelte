@@ -9,11 +9,7 @@
     console.log(project);
 </script>
 
-<main class="gridContainer">
-    
-</main>
-
-<div class="content clearFloat">
+<section class="heading">
     <h1>{project.name}</h1>
     <h3>{project.affiliation} • {project.date}</h3>
 
@@ -22,11 +18,12 @@
             <Tag object={{text: tech.content, bgcolor: "lightgray"}}/>
         {/each}
     </div>
+</section>
 
+<section class="content clearFloat">
     <img src="{project.cover}" alt="{project['cover-alt']}">
-
     <p>{project.description}</p>
-</div>
+</section>
 
 <!-- <h1>{project.name}</h1>
 <p>{project.description}</p> -->
@@ -34,12 +31,12 @@
 
 <style>
 
-    main {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        align-items: center;
+    .heading {
+        text-align: left;
     }
 
     h1 {
+        font-size: 2em;
         color: lightgray;
         padding: 1rem 1rem 0 1rem;
     }
