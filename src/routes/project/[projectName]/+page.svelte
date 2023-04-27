@@ -25,11 +25,29 @@
     <p>{project.description}</p>
 </section>
 
+<h1>Gallery</h1>
+<section class="gallery gridContainer">
+    {#each project.gallery as pic}
+        <img src="{pic.link}" alt="{pic.alt}">
+    {/each}
+</section>
+
+
 <!-- <h1>{project.name}</h1>
 <p>{project.description}</p> -->
 
 
 <style>
+
+    .gallery {
+        padding: 1rem 0;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .gallery > * {
+        width: 100%;
+        padding: 0;
+    }
 
     .heading {
         text-align: left;
@@ -38,22 +56,17 @@
     h1 {
         font-size: 2em;
         color: lightgray;
-        padding: 1rem 1rem 0 1rem;
     }
 
     h3 {
-        padding: 1rem;
+        padding: 1rem 0;
         color: gray;
-    }
-
-    .tags {
-        padding: 0 1rem 0 1rem;
     }
 
     p {
         color: gray;
         line-height: 2em;
-        padding: 1em;
+        padding: 1rem 0;
     }
 
     img {
@@ -68,10 +81,11 @@
         content: "";
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 800px) {
         img {
             float: none;
             width: 100%;
+            padding: 1rem 0;
         }
     }
 </style>
