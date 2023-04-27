@@ -32,3 +32,9 @@ html {
     max-width: 1200px;
     padding: 1em;
 }
+
+.clearFloat::after {
+    clear: both;
+    display: block;
+    content: "";
+}
