@@ -124,7 +124,7 @@
     .content img {
         width: 50%;
         float: right;
-        padding-left: 1rem;
+        padding: 0 0 1rem 1rem;
         cursor: pointer;
     }
 
