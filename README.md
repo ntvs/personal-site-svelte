@@ -1,5 +1,6 @@
 # Environment variables
 - PUBLIC_PROJECTS_URL=
+- PUBLIC_PROFILE_URL=
 
 # create-svelte
 
