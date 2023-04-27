@@ -3,9 +3,7 @@
     //components
     import SocialLink from "../../lib/SocialLink.svelte"
 
-    //fetched content
-    export let data;
-
+    //Profile initial state
     let profile = {
         about: {
             img: "",
@@ -14,6 +12,10 @@
         },
         links: []
     };
+
+    //fetched content
+    export let data;
+
     profile = data.profile;
 
 </script>
