@@ -24,6 +24,8 @@
     //console.log(project);
 </script>
 
+<svelte:window on:keydown={(e) => {if (e.key === 'Escape') modalOpen = false}} />
+
 <section class="heading">
     <h1>{project.name}</h1>
     <h3>{project.affiliation} • {project.date}</h3>
