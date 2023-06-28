@@ -16,7 +16,6 @@
 
 html {
     min-height: 100%;
-    scrollbar-gutter: stable both-edges;
     /* min-width: 300px; */
 }
 
