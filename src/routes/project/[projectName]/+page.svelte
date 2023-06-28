@@ -8,6 +8,7 @@
 
     //components
     import Tag from "../../../lib/Tag.svelte";
+    import SocialLink from "../../../lib/SocialLink.svelte";
 
     //state
     let modalOpen = false;
@@ -40,8 +41,18 @@
     <p>{project.description}</p>
 </section>
 
+<!--Display links if there are any-->
+{#if project.links && project.links.length > 0}
+    <h1>Links</h1>
+    <div style="margin-bottom: 1rem;">
+        {#each project.links as link}
+            <SocialLink options={{link: link.url, text: link.text, color: "lightblue"}} />
+        {/each}
+    </div>
+{/if}
+
 <!--Display gallery images if there are any-->
-{#if project.gallery.length > 0}
+{#if project.gallery && project.gallery.length > 0}
     <h1>Gallery</h1>
     <section class="gallery gridContainer">
         {#each project.gallery as pic}
