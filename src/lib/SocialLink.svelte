@@ -2,13 +2,16 @@
     export let options = {
         "icon": "",
         "link": "",
-        "color": "white"
+        "color": "white",
+        "text": ""
     };
 </script>
 
 <a href="{options.link}" target="_blank" class="link" rel="noreferrer">
-    <div class="social">
-        <img class="social-icon" src="{options.icon}" alt="{options.text}">
+    <div class="social" style="outline: solid 1px {options.color};">
+        {#if options.icon}
+            <img class="social-icon" src="{options.icon}" alt="{options.text}">
+        {/if}
         {#if options.text}
             <p class="social-text" style="color: {options.color};">{options.text}</p>
         {/if}
@@ -29,6 +32,9 @@
         align-items: center;
         user-select: none;
     }
+    .social > *+* {
+        padding-left: 0.5em;
+    }
     .social-icon {
         display: inline-block;
         height: 1.5em;
@@ -36,7 +42,6 @@
         vertical-align: middle;
     }
     .social-text {
-        padding-left: 0.5em;
         display: inline-block;
     }
 </style>
