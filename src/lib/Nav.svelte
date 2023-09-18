@@ -3,8 +3,8 @@
 
     const links = [
         {text: "Home", url: "/"},
-        {text: "About", url: "/about"},
-        {text: "Graphics", url: "https://ntvs-graphics.com/"},
+        {text: "About", url: "/about"}
+        //{text: "Graphics", url: "https://ntvs-graphics.com/"},
     ]
 </script>
 
