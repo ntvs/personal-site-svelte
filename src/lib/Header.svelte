@@ -1,11 +1,17 @@
 <script>
     import { slide } from "svelte/transition";
+    import { beforeNavigate } from "$app/navigation";
 
     //components
     import Nav from "./Nav.svelte";
 
     //state
     let menuOpen = false;
+
+    //close menu when navigating
+    beforeNavigate(() => {
+        menuOpen = false;
+    });
 </script>
 
 <header>
